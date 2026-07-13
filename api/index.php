@@ -3,6 +3,9 @@
 // Check if a database migration request is made
 if (isset($_GET['migrate']) && $_GET['migrate'] === 'yes') {
     try {
+        // Load Composer Autoloader
+        require __DIR__ . '/../vendor/autoload.php';
+        
         echo "<h1>Running Database Migrations & Seeders...</h1>";
         
         // Boot Laravel application
