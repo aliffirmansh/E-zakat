@@ -42,10 +42,6 @@ Route::get('/register', function () {
 });
 
 
-Route::get('/muzzaki', function () {
-    return view('muzzaki');
-});
-
 Route::get('/daftar', [App\Http\Controllers\Registercontroller::class, 'create']);
 Route::post('/daftar', [App\Http\Controllers\Registercontroller::class, 'store']);
 

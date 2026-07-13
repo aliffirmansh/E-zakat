@@ -30,10 +30,6 @@ class LoginController extends Controller
 
             session(['id' => $user->name]); // Create session for displaying name in the menu
 
-            if ($user->role == 'superadmin') {
-                return redirect('superadmin/dashboard'); // Redirect to superadmin dashboard
-            }
-
             return redirect('dashboard'); // Redirect to general dashboard
         } else {
             // Authentication failed...
