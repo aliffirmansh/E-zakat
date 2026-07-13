@@ -11,6 +11,9 @@ RUN apk add --no-cache nodejs npm
 COPY docker-bootstrap.sh /etc/entrypoint.d/run-migrations.sh
 RUN chmod +x /etc/entrypoint.d/run-migrations.sh
 
+# Change Nginx port to 7860 for Hugging Face Spaces
+RUN sed -i 's/8080/7860/g' /etc/nginx/nginx.conf /etc/nginx/conf.d/*.conf || true
+
 # Switch back to webuser to copy files and run composer
 USER webuser
 
